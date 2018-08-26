@@ -1,0 +1,28 @@
+---
+# Host variables for host wintestvm001
+
+az_vm_size:     Standard_A2
+
+az_admin_username: wintester
+az_admin_password: Winpassword12.3
+
+az_sec_groups:
+  - name: 'AllowRDP'
+    protocol: Tcp
+    destination_port_range: 3389
+    access: Allow
+    priority: 101
+    direction: Inbound
+
+  - name: 'AllowWinRM'
+    protocol: Tcp
+    destination_port_range: 5986
+    access: Allow
+    priority: 102
+    direction: Inbound
+
+az_vm_image:
+    offer: WindowsServer
+    publisher: MicrosoftWindowsServer
+    sku: 2016-Datacenter
+    version: latest

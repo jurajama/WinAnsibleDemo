@@ -1,0 +1,22 @@
+---
+# This is group level configuration for "windows" hostgroup.
+# Settings are common for all VMs in that group.
+
+# Azure Resource Group name
+az_rg_name:  "WinTest"
+
+az_vm_os_type: Windows
+
+# Azure zone
+az_location: "northeurope"
+
+# Ansible connection settings
+# Reference: https://docs.ansible.com/ansible/2.6/user_guide/windows_winrm.html
+ansible_connection: winrm
+ansible_winrm_server_cert_validation: ignore
+
+# Credentials that Ansible uses to connect to WinRM
+# This refers to admin credentials of the VM
+ansible_user:     "{{ az_admin_username }}"
+ansible_password: "{{ az_admin_password }}"
+

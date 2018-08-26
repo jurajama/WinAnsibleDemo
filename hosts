@@ -1,0 +1,2 @@
+[windows]
+wintestvm001 ansible_host=wintestvm001.northeurope.cloudapp.azure.com
