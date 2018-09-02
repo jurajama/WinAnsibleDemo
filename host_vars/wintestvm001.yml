@@ -7,6 +7,7 @@ az_admin_username: wintester
 az_admin_password: Winpassword12.3
 
 az_sec_groups:
+# Remote desktop port
   - name: 'AllowRDP'
     protocol: Tcp
     destination_port_range: 3389
@@ -14,11 +15,20 @@ az_sec_groups:
     priority: 101
     direction: Inbound
 
+# WinRM port needed for Ansible connection
   - name: 'AllowWinRM'
     protocol: Tcp
     destination_port_range: 5986
     access: Allow
     priority: 102
+    direction: Inbound
+
+# Port 8124 used by demo application
+  - name: 'AllowPort8124'
+    protocol: Tcp
+    destination_port_range: 8124
+    access: Allow
+    priority: 103
     direction: Inbound
 
 az_vm_image:

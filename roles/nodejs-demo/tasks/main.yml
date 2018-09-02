@@ -1,0 +1,26 @@
+---
+- name: Install Node.js
+  win_chocolatey:
+    name: nodejs.install
+
+- name: Firewall rule to allow connections to TCP port 8124
+  win_firewall_rule:
+    name: port 8124
+    localport: 8124
+    action: allow
+    direction: in
+    protocol: tcp
+    state: present
+    enabled: yes
+
+- name: Create application directory
+  win_file:
+    path: "{{ app_dir }}"
+    state: directory
+
+- name: Copy node.js application code
+  win_copy:
+    src: "files/hellohttp.js"
+    dest: "{{ app_dir }}\\hellohttp.js"
+
+# TODO: Start application as service using https://www.npmjs.com/package/os-service

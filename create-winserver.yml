@@ -9,13 +9,9 @@
 
 # This play is just a demonstration of doing some action for the VM to see
 # that Ansible can manage it.
-- name: Add a user
+- name: Install SW on Windows VM
   hosts: wintestvm001
   gather_facts: false
-  tasks:
-    - name: Add User
-      win_user:
-        name: ansible
-        password: "@ns1bl3"
-        state: present
-  tags: [adduser]
+  roles:
+    - nodejs-demo
+  tags: [conf]

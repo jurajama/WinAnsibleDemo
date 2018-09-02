@@ -1,0 +1,3 @@
+---
+# Note: Use double-backslashes in Windows paths
+app_dir: "c:\\apps\\nodejs-demo"

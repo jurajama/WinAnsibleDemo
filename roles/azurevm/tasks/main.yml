@@ -65,12 +65,6 @@
 - debug:
     msg: "VM public IP: {{ vm_public_ip }}"
 
-- name: Add VM to inventory
-  add_host:
-    hostname: "{{ az_vm_name }}"
-    ansible_host: "{{ vm_public_ip }}"
-    groupname: "{{ vm_ansible_group |default(omit) }}"
-
 - name: Install WinRM
   block:
     - name: Install WinRM
