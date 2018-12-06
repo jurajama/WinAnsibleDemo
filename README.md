@@ -3,7 +3,7 @@ Demonstration of how to deploy Windows VM in Azure with Ansible.
 Ansible communicates with Windows via WinRM interface. _azurevm_ role automatically installs WinRM to VM so that no manual steps are required.
 
 ## Preconditions
-Linux machine that acts as Ansible client. It could be also a Docker container, for example centos:latest.
+Linux machine that acts as Ansible client. You can install the tools also in a Docker container, for example centos:latest. 
 
 Install Ansible and other required modules:
 ```
@@ -12,6 +12,8 @@ yum -y install git python-pip
 pip install ansible
 pip install pywinrm packaging msrestazure ansible[azure]
 ```
+
+If you don't want to install any SW yourself, you can use ready-made container https://github.com/jurajama/OS_ansible_client.
 
 Clone git repository:
 ```
@@ -36,7 +38,7 @@ export AZURE_SECRET=xxxxxxxx
 export AZURE_TENANT=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-See more information in https://docs.ansible.com/ansible/2.6/scenario_guides/guide_azure.html
+See more information in https://docs.ansible.com/ansible/2.6/scenario_guides/guide_azure.html and https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal.
 
 Run playbook:
 ```
