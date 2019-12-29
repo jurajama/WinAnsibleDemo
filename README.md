@@ -10,7 +10,7 @@ Install Ansible and other required modules:
 yum -y install epel-release
 yum -y install git python-pip
 pip install ansible
-pip install pywinrm packaging msrestazure ansible[azure]
+pip install pywinrm packaging ansible[azure]
 ```
 
 If you don't want to install any SW yourself, you can use ready-made container https://github.com/jurajama/OS_ansible_client.
@@ -38,7 +38,7 @@ export AZURE_SECRET=xxxxxxxx
 export AZURE_TENANT=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-See more information in https://docs.ansible.com/ansible/2.6/scenario_guides/guide_azure.html and https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal.
+See more information in https://docs.ansible.com/ansible/2.9/scenario_guides/guide_azure.html and https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal.
 
 Run playbook:
 ```
